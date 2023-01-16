@@ -11,15 +11,16 @@ function newItem() {
     let list = $('#list');
     $('#list').append(li); // how come you can't just use list.append(li) since you defined it already?
   }
-/*
+
+  
   function crossOut() {
     li.toggleClass('strike');
   }
 
-  li.on('dbclick', function crossOut() {
-    li.toggleClass('strike'); // why does this function need to be written out twice?
+  li.on('dblclick', function crossOut() {
+    li.toggleClass('strike');
   });
-*/
+
  
   let crossOutButton = $('<crossOutButton></crossOutButton>');
   //crossOutButton.addClass('crossOutButton'); - this line not needed
@@ -33,7 +34,6 @@ function newItem() {
   }
 
   $('#list').sortable();
-
 
 }
 
