@@ -1,4 +1,4 @@
-function newItem(){
+function newItem{
 
   let li = $('<li></li>');
   let inputValue = $('input').value();
@@ -9,7 +9,7 @@ function newItem(){
     alert('You must write something');
   } else {
     let list = $('#list');
-    $('#list').append(li); // how come you can't just use list.append(li) since you already?
+    list.append(li); // how come you can't just use list.append(li) since you already?
   }
 
   li.on('dbclick', crossOut() => li.addClass('strike');)
@@ -36,7 +36,7 @@ function newItem(){
 
   //li.addClass('delete');
 
-}
 
+}
 
 
