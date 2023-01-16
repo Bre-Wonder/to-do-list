@@ -1,19 +1,26 @@
-function newItem{
+function newItem() {
 
   let li = $('<li></li>');
-  let inputValue = $('input').value();
-  //let text = jquery : $("#divButtons").append(?????); maybe this is my solution
+  let inputValue = $('#input').val();
+  //let text = jquery : $("#divButtons").append(?????); maybe this is my solution - not needed for this
   li.append(inputValue);
 
   if (inputValue === '') {
     alert('You must write something');
   } else {
     let list = $('#list');
-    list.append(li); // how come you can't just use list.append(li) since you already?
+    $('#list').append(li); // how come you can't just use list.append(li) since you defined it already?
   }
 
-  li.on('dbclick', crossOut() => li.addClass('strike');)
+  function crossOut() {
+    li.toggleClass('strike');
+  }
 
+  li.on('dbclick', function crossOut() {
+    li.toggleClass('strike'); // why does this function need to be written out twice?
+  });
+
+ /*
   let crossOutButton = $('<button></button>');
   crossOutButton.addClass('crossOutButton');
   crossOutButton.append(document.createTextNode('X'));
@@ -24,17 +31,8 @@ function newItem{
   function deleteListItem(){
     li.addClass('delete');
   }
-
+*/
   $('#list').sortable();
-
-
-
-  //function crossOut() {
-    //li.addClass('strike');
- // }
-    
-
-  //li.addClass('delete');
 
 
 }
