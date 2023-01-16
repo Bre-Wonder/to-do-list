@@ -11,7 +11,7 @@ function newItem() {
     let list = $('#list');
     $('#list').append(li); // how come you can't just use list.append(li) since you defined it already?
   }
-
+/*
   function crossOut() {
     li.toggleClass('strike');
   }
@@ -19,19 +19,19 @@ function newItem() {
   li.on('dbclick', function crossOut() {
     li.toggleClass('strike'); // why does this function need to be written out twice?
   });
-
- /*
-  let crossOutButton = $('<button></button>');
-  crossOutButton.addClass('crossOutButton');
+*/
+ 
+  let crossOutButton = $('<crossOutButton></crossOutButton>');
+  //crossOutButton.addClass('crossOutButton'); - this line not needed
   crossOutButton.append(document.createTextNode('X'));
   li.append(crossOutButton);
 
-  $('crossOutButton').on('click', deleteListItem);
+  crossOutButton.on('click', deleteListItem); // How come this event listener is different?
 
   function deleteListItem(){
-    li.addClass('delete');
+    li.addClass('delete')
   }
-*/
+
   $('#list').sortable();
 
 
